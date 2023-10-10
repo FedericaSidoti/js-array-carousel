@@ -36,15 +36,21 @@ let selectedIMG = imgElements[indexCurrentImage]
 btndownDOMElement = document.getElementById('btn-down')
 btndownDOMElement.addEventListener ('click', function (){
 
-    selectedIMG.classList.remove('active')
 // AL CLICK la classe active viene aggiunta all'immagine successiva a quella mostrata. 
+    if (indexCurrentImage === (arrayImages.length -1)) {
+        indexCurrentImage = 0 ;
+    } else {
+        selectedIMG.classList.remove('active')
 
-    let indexNextIMG = indexCurrentImage + 1  
-    selectedIMG = imgElements[indexNextIMG]
-    selectedIMG.classList.add('active')
+        let indexNextIMG = indexCurrentImage + 1  
+        selectedIMG = imgElements[indexNextIMG]
+        selectedIMG.classList.add('active')
 
-    indexCurrentImage ++
+        indexCurrentImage ++
+    }
 })    
+
+
 
 
 
