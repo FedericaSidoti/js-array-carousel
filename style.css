@@ -28,10 +28,11 @@ button {
     justify-content: center;
     align-items: center;
     position: relative;
+    width: 900px; 
 }
 
 .img {
-    max-width: 800px;
+    display: none;
 }
 
 .button {
@@ -51,4 +52,8 @@ button {
 .down {
     left: 50%;
     bottom: 10px;
+}
+
+.active {
+    display: block;
 }
