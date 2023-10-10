@@ -10,9 +10,11 @@ const arrayImages = [
 const imgContainerDomElement = document.querySelector('.img-container');
 //console.log (imgContainerDomElement)
 
+let currentIMG 
+
 for(let i = 0; i < arrayImages.length; i++) {
-    const currentIMG = arrayImages[i];
     //console.log(currentIMG)
+    currentIMG = arrayImages[i];
     const htmlString = `
     <div class="img">
         <img src="${currentIMG}">
@@ -24,19 +26,31 @@ for(let i = 0; i < arrayImages.length; i++) {
 
 const imgElements = document.querySelectorAll('.img')
 //console.log(imgElements)
-let currentIMG = imgElements[0]
-currentIMG.classList.add('active')
-let classActive = true ;
+let indexCurrentImage = 0; 
+let firstIMG = imgElements[0]
+firstIMG.classList.add('active')
+
+let selectedIMG = imgElements[indexCurrentImage]
 
 //aggiungere alle frecce un eventlistener
 btndownDOMElement = document.getElementById('btn-down')
 btndownDOMElement.addEventListener ('click', function (){
-    
-    
+
+    selectedIMG.classList.remove('active')
+// AL CLICK la classe active viene aggiunta all'immagine successiva a quella mostrata. 
+
+    let indexNextIMG = indexCurrentImage + 1  
+    selectedIMG = imgElements[indexNextIMG]
+    selectedIMG.classList.add('active')
+
+    indexCurrentImage ++
 })    
+
+
+
 
 /*
 
 }*/
-// AL CLICK la classe active viene aggiunta all'immagine successiva a quella mostrata. 
+
 
