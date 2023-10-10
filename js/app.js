@@ -19,7 +19,7 @@ for(let i = 0; i < arrayImages.length; i++) {
     </div>
     `
     console.log(htmlString)
-    imgContainerDomElement.innerhtml += htmlString
+    imgContainerDomElement.innerHTML += htmlString
 }
 
 
