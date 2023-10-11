@@ -26,29 +26,45 @@ for(let i = 0; i < arrayImages.length; i++) {
 
 const imgElements = document.querySelectorAll('.img')
 //console.log(imgElements)
-let indexCurrentImage = 0; 
-let firstIMG = imgElements[0]
-firstIMG.classList.add('active')
+let indexSelectedImage = 0; 
+//let firstIMG = imgElements[0]
+let selectedIMG = imgElements[indexSelectedImage]
+selectedIMG.classList.add('active')
 
-let selectedIMG = imgElements[indexCurrentImage]
 
 //aggiungere alle frecce un eventlistener
 btndownDOMElement = document.getElementById('btn-down')
 btndownDOMElement.addEventListener ('click', function (){
-
 // AL CLICK la classe active viene aggiunta all'immagine successiva a quella mostrata. 
-    if (indexCurrentImage === (arrayImages.length -1)) {
-        indexCurrentImage = 0 ;
+    if (indexSelectedImage === arrayImages.length) {
+        indexSelectedImage = 0 ;
     } else {
-        selectedIMG.classList.remove('active')
 
-        let indexNextIMG = indexCurrentImage + 1  
-        selectedIMG = imgElements[indexNextIMG]
-        selectedIMG.classList.add('active')
-
-        indexCurrentImage ++
+    selectedIMG.classList.remove('active')
+    selectedIMG = imgElements[indexSelectedImage++]
+    selectedIMG.classList.add('active')
+    console.log(selectedIMG.classList)
+    console.log(indexSelectedImage)
     }
 })    
+
+btnUpElement = document.getElementById('btn-up')
+btnUpElement.addEventListener('click', function(){
+
+    if (indexSelectedImage === 0 ) {
+        indexSelectedImage = (arrayImages.length -1)
+    } else {
+
+    selectedIMG.classList.remove('active')
+    selectedIMG = imgElements[indexSelectedImage --]
+    selectedIMG.classList.add('active')
+    console.log(selectedIMG.classList)
+    console.log(indexSelectedImage)
+    }
+    
+})
+
+
 
 
 

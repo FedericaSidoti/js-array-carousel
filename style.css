@@ -29,6 +29,7 @@ button {
     align-items: center;
     position: relative;
     width: 900px; 
+    height: 900px;
 }
 
 .img {
