@@ -28,12 +28,14 @@ button {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 900px; 
     height: 900px;
+    overflow: hidden;
+    background-color: black;
 }
 
 .img {
     display: none;
+    object-fit: contain;
 }
 
 .button {
